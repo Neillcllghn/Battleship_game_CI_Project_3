@@ -135,6 +135,8 @@ def game_logistics():
         row, column = ship_location_choices()
         if GUESS_PATTERN[row][column] == '-':
             print('You already guess that. Please try again')
+        elif GUESS_PATTERN[row][column] == 'X':
+            print('You already guess that. Please try again')
         elif HIDDEN_BOARD[row][column] == 'X':
             print('Great job!, you sunk my Battleship')
             GUESS_PATTERN[row][column] = 'X'
