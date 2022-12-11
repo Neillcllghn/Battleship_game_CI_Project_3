@@ -87,7 +87,7 @@ def ship_location_choices():
     Inspired by Knowledge Mavens - 
     How to Code Battleship in Python - Single Player Game.
     """
-    column_select = ['A','B','C','D','E','G']
+    column_select = ['A','B','C','D','E','F','G']
     row = input("Please enter a ship row 1-6:\n")
     while not row.isdigit() or int(row) < 1 or int(row) > 6:
         print(f'You selected invaild {row} row, please try again')
