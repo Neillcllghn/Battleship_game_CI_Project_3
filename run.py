@@ -111,6 +111,16 @@ def count_hit_ships(board):
                 count += 1
     return count
 
+def no_of_turns():
+    """
+    This is to allow the user to select the number of turns they want.
+    """
+    turns = input('How many turns do you want? Between 1-10 :\n')
+    while not turns.isdigit() or int(turns) < 1 or int(turns) >= 10:
+        print(f'You selected invaild {turns} number of turns, please try again')
+        turns = input('How many turns do you want? Between 1-10 :\n')
+    return int(turns)
+
 def new_game ():
     login_data = input_details()
 
