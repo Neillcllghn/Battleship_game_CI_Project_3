@@ -12,7 +12,7 @@ def input_details():
     """
     while True:
         print('Please enter your username.')
-        print('username must not contain numbers or/and special characters')
+        print('Username must not contain numbers or/and special characters')
         print('Must be no longer than 6 characters')
         print("Example: Neocal etc.....\n")
 
@@ -25,11 +25,11 @@ def input_details():
 def validate_username(values):
     """
     Validate the username being entered. So that it is exactly:
-    1. Is 6 characters long.
+    1. Is min 3 and max 6 characters long.
     2. Contains no numbers or special characters.
     """
     if len(values) < 3 or len(values) > 6:
-        print(f"username must be more than 3 and less than 6 characters long, you provided {len(values)}.")
+        print(f"Username must be more than 3 and less than 6 characters long, you provided {len(values)}.")
         return False
     elif any(char.isnumeric() for char in values):
         print(f"the username {values} cannot be used, please don't use numbers.")
