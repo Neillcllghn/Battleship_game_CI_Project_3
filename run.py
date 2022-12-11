@@ -10,12 +10,37 @@ def input_details():
     This function allows the user/player to enter a username.
     Inspired by Love Sandwiches CI project.
     """
-    print('Please enter your username.')
-    print('username must not contain numbers or/and special characters')
-    print('Must be no longer than 6 characters')
-    print("Example: Neocal etc.....\n")
+    while True:
+        print('Please enter your username.')
+        print('username must not contain numbers or/and special characters')
+        print('Must be no longer than 6 characters')
+        print("Example: Neocal etc.....\n")
 
-    input("Enter your username here:\n")
+        username = input("Enter your username here:\n")
+        
+        if validate_username(username):
+            print(f'Hello {username}, Welcome to Battleship Madness!')
+            break
 
+def validate_username(values):
+    """
+    Validate the username being entered. So that it is exactly:
+    1. Is 6 characters long.
+    2. Contains no numbers or special characters.
+    """
+    if len(values) < 3 or len(values) > 6:
+        print(f"username must be more than 3 and less than 6 characters long, you provided {len(values)}.")
+        return False
+    elif any(char.isnumeric() for char in values):
+        print(f"the username {values} cannot be used, please don't use numbers.")
+        return False
+    elif not values.isalnum():
+        print(f"the username {values} cannot be used, please don't use non-alphabetic characters.")
+        return False
 
-input_details()
+    return True
+
+def new_game ():
+    login_data = input_details()
+
+new_game ()
