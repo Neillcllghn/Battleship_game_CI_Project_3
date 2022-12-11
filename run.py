@@ -40,6 +40,19 @@ def validate_username(values):
 
     return True
 
+def print_board(board):
+    """
+    This creates the board.
+    Credit for code goes to Knowledge Mavens - 
+    How to Code Battleship in Python - Single Player Game.
+    """
+    print('  A B C D E F G')
+    print(' ---------------')
+    row_of_numbers = 1
+    for row in board:
+        print("%d|%s|" % (row_of_numbers, "|".join(row)))
+        row_of_numbers += 1
+
 def new_game ():
     login_data = input_details()
 
