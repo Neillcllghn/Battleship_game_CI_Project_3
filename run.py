@@ -2,7 +2,7 @@ from random import randint
 
 HIDDEN_BOARD = [[' ']*7 for x in range(6)]
 GUESS_PATTERN = [[' ']*7 for x in range(6)]
-let_to_nums={'A': 0,'B': 1, 'C': 2,'D': 3,'E': 4,'F': 5,'G': 6}
+let_to_nums = {'A': 0,'B': 1, 'C': 2,'D': 3,'E': 4,'F': 5,'G': 6}
 
 
 def input_details():
@@ -16,8 +16,7 @@ def input_details():
         print('Must be no longer than 6 characters')
         print("Example: Neocal etc.....\n")
 
-        username = input("Enter your username here:\n")
-        
+        username = input("Enter your username here:\n")    
         if validate_username(username):
             print(f'Hello {username}, Welcome to Battleship Madness!')
             break
