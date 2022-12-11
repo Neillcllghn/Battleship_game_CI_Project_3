@@ -66,6 +66,20 @@ def no_of_ships():
     return int(ships)
 
 
+def ship_creation(board):
+    """
+    This creates the ships and places them on the board randomly.
+    Inspired by Knowledge Mavens - 
+    How to Code Battleship in Python - Single Player Game.
+    """
+    global ships
+    ships = no_of_ships()
+    for ship in range(ships):
+        ship_row, ship_column = randint(0,5), randint(0,5)
+        while board[ship_row][ship_column] == 'X':
+            ship_row, ship_column = randint(0,5), randint(0,5)
+        board[ship_row][ship_column] = 'X'
+
 def new_game ():
     login_data = input_details()
 
