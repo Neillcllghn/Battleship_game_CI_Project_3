@@ -59,10 +59,10 @@ def no_of_ships():
     Inspired by Knowledge Mavens - 
     How to Code Battleship in Python - Single Player Game.
     """
-    ships = input('How many ships do you want to sink? Between 1-8 :\n')
-    while not ships.isdigit() or int(ships) < 1 or int(ships) >= 9:
+    ships = input('How many ships do you want to sink? Between 1-10 :\n')
+    while not ships.isdigit() or int(ships) < 1 or int(ships) >= 11:
         print(f'You selected invaild {ships} number of ships, please try again')
-        ships = input('How many ships do you want to sink? Between 1-8 :\n')
+        ships = input('How many ships do you want to sink? Between 1-10 :\n')
     return int(ships)
 
 
@@ -115,10 +115,10 @@ def no_of_turns():
     """
     This is to allow the user to select the number of turns they want.
     """
-    turns = input('How many turns do you want? Between 1-10 :\n')
-    while not turns.isdigit() or int(turns) < 1 or int(turns) >= 11:
+    turns = input('How many turns do you want? Between 1-20 :\n')
+    while not turns.isdigit() or int(turns) < 1 or int(turns) >= 21:
         print(f'You selected invaild {turns} number of turns, please try again')
-        turns = input('How many turns do you want? Between 1-10 :\n')
+        turns = input('How many turns do you want? Between 1-20 :\n')
     return int(turns)
 
 def game_logistics():
