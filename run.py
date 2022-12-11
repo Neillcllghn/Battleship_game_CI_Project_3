@@ -80,6 +80,24 @@ def ship_creation(board):
             ship_row, ship_column = randint(0,5), randint(0,5)
         board[ship_row][ship_column] = 'X'
 
+def ship_location_choices():
+    """
+    Allows the user to input a row number and a column letter to guess where
+    the ships are on the board.
+    Inspired by Knowledge Mavens - 
+    How to Code Battleship in Python - Single Player Game.
+    """
+    
+    row = input("Please enter a ship row 1-6:\n")
+    while not row.isdigit() or int(row) < 1 or int(row) > 6:
+        print(f'Youclear selected invaild {row} row, please try again')
+        row = input("Please enter a ship row 1-6:\n")
+    column = input('Please enter a ship column A-G:\n').upper()
+    while column not in 'ABCDEFG':
+        print(f'You selected invaild {column} column, please try again')
+        column = input('Please enter a ship column A-G:\n').upper()
+    return int(row) - 1, let_to_nums[column]
+
 def new_game ():
     login_data = input_details()
 
