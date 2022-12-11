@@ -53,6 +53,19 @@ def print_board(board):
         print("%d|%s|" % (row_of_numbers, "|".join(row)))
         row_of_numbers += 1
 
+def no_of_ships():
+    """
+    This is to allow the user to select the number of ships they want.
+    Inspired by Knowledge Mavens - 
+    How to Code Battleship in Python - Single Player Game.
+    """
+    ships = input('How many ships do you want to sink? Between 1-6 :\n')
+    while not ships.isdigit() or int(ships) < 1 or int(ships) >= 6:
+        print(f'You selected invaild {ships} number of ships, please try again')
+        ships = input('How many ships do you want to sink? Between 1-6 :\n')
+    return int(ships)
+
+
 def new_game ():
     login_data = input_details()
 
