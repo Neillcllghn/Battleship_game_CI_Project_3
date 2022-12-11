@@ -98,6 +98,19 @@ def ship_location_choices():
         column = input('Please enter a ship column A-G:\n').upper()
     return int(row) - 1, let_to_nums[column]
 
+def count_hit_ships(board):
+    """
+    This reduces the number of ships if the user guessed correctly.
+    Credit for code goes to Knowledge Mavens - 
+    How to Code Battleship in Python - Single Player Game.
+    """
+    count = 0
+    for row in board:
+        for column in row:
+            if column == 'X':
+                count += 1
+    return count
+
 def new_game ():
     login_data = input_details()
 
